@@ -6,7 +6,8 @@
 }
 
 body {
-  display: block;
+  display: grid;
+  grid-template-columns: 250px 1fr;
   line-height: 1.5;
   background-color: antiquewhite;
 }
@@ -14,7 +15,8 @@ body {
 /* SIDE NAV */
 .sidenav {
   height: 100%;
-  width: 15%; /* 0 width - change this with JavaScript */
+  /* change width with JavaScript to close sidenav based on screen size */
+  width: 15%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -22,15 +24,17 @@ body {
   background-color: #111;
   overflow-x: hidden;
   padding-top: 60px;
-  transition: 0.5s;
+  transition: 0.75s;
 }
 
 .sidenav__items {
   color: white;
+  padding-left: 1em;
 }
 
 .sidenav__item {
   list-style: none;
+  margin-bottom: 3em;
 }
 
 .sidenav__item:hover {
@@ -41,7 +45,7 @@ body {
 .topnav {
   position: fixed;
   height: 10%;
-  width: 85%;
+  /* width: 85%; */
   z-index: 1;
   top: 0;
   right: 0;
@@ -80,4 +84,5 @@ section .content {
   border: 1px solid black;
   width: 50%;
   margin: 0;
+  margin-bottom: 3em;
 }
