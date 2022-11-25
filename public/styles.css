@@ -61,3 +61,23 @@ body {
 .topnav__item:hover {
   color: goldenrod;
 }
+
+/* MAIN CONTENT AREA */
+section .content {
+  display: flex;
+  padding-top: 100px;
+}
+
+.content-wrapper__main {
+  display: flex;
+  flex-direction: column;
+  /* FIXME this padding not optimal */
+  padding-left: 250px;
+}
+
+.card {
+  flex-direction: column;
+  border: 1px solid black;
+  width: 50%;
+  margin: 0;
+}
