@@ -101,9 +101,9 @@ main {
 
 /* TOP NAV */
 .topnav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  display: grid;
+  grid-template-columns: [title] 3fr [links] 1fr;
+  align-content: center;
   height: 50px;
   width: 100%;
   z-index: 1;
@@ -115,15 +115,20 @@ main {
   border-bottom: 1px solid gray;
 }
 
+.topnav__title {
+  padding-left: 35px;
+}
+
 .topnav__items {
   display: flex;
   justify-content: end;
-  padding-right: 3em;
+  align-items: center;
+  padding-right: 3.5em;
 }
 
 .topnav__item {
   list-style: none;
-  margin-left: 2em;
+  margin-left: 2.5em;
 }
 
 .topnav__item:hover {
