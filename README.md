@@ -1,4 +1,4 @@
-I'm working on creating a full-stack logistics dashboard using vanilla JavaScript, HTML, and CSS. Charts will be created with Charts.js (or D3.js?) using data pulled from a local MySQL database.
+This is (well, will be!) a logistics dashboard using vanilla JavaScript, HTML, and CSS. Charts will be created with Charts.js (or D3.js?) using data pulled from a local MySQL database.
 
 Loosely basing the design off of this:
 https://demos.creative-tim.com/light-bootstrap-dashboard/examples/dashboard.html
