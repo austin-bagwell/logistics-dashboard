@@ -22,6 +22,10 @@ body {
   background-color: rgb(243, 243, 243);
 }
 
+a {
+  text-decoration: none;
+}
+
 /* SIDE NAV */
 .sidenav {
   flex-direction: column;
@@ -55,7 +59,7 @@ body {
 }
 
 .sidenav__items {
-  display: flex;
+  display: block;
   flex-direction: column;
   color: white;
   padding-left: 50px;
@@ -63,13 +67,31 @@ body {
 }
 
 .sidenav__item {
-  text-align: left;
+  display: list-item;
   list-style: none;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 .sidenav__item:hover {
   color: goldenrod;
+}
+
+.sidenav__item > a {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: white;
+}
+
+.sidenav__item > a > img {
+  padding-right: 20px;
+  max-width: 25px;
+  max-height: 25px;
+  filter: invert(100%);
+}
+
+.sidenav__text {
+  text-transform: uppercase;
 }
 
 /* MAIN CONTENT AREA */
@@ -79,23 +101,29 @@ main {
 
 /* TOP NAV */
 .topnav {
-  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
   width: 100%;
   z-index: 1;
   top: 0;
   right: 0;
-  height: 50px;
-  background-color: white;
   margin-bottom: 25px;
+  padding: 5px;
+  background-color: white;
+  border-bottom: 1px solid gray;
 }
 
 .topnav__items {
   display: flex;
-  justify-content: space-around;
+  justify-content: end;
+  padding-right: 3em;
 }
 
 .topnav__item {
   list-style: none;
+  margin-left: 5em;
 }
 
 .topnav__item:hover {
