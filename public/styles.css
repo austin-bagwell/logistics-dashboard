@@ -42,7 +42,7 @@ a {
   transition: 0.75s;
 }
 
-.sidenav > div {
+.sidenav .logo {
   padding-bottom: 2em;
 }
 
@@ -54,24 +54,29 @@ a {
 }
 
 .logo > img {
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 100px;
+  min-height: 100px;
 }
 
 .sidenav__items {
   display: block;
   flex-direction: column;
-  color: white;
   padding-left: 25px;
   padding-right: 25px;
+  color: white;
 }
 
 .sidenav__item {
   display: list-item;
   list-style: none;
   margin-bottom: 1em;
+  padding-left: 10px;
 }
 
+.sidenav__item.active {
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 5px;
+}
 .sidenav__item:hover {
   color: goldenrod;
 }
