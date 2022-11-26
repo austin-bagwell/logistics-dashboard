@@ -24,6 +24,7 @@ body {
 
 /* SIDE NAV */
 .sidenav {
+  flex-direction: column;
   max-height: calc(100vh - 75px);
   min-height: 100%;
   /* change width with JavaScript to close sidenav based on screen size */
@@ -38,11 +39,15 @@ body {
 }
 
 .sidenav__items {
+  display: flex;
+  flex-direction: column;
   color: white;
-  padding-left: 1em;
+  padding-left: 50px;
+  padding-right: 25px;
 }
 
 .sidenav__item {
+  text-align: left;
   list-style: none;
   margin-bottom: 3em;
 }
