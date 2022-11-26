@@ -62,14 +62,14 @@ a {
   display: block;
   flex-direction: column;
   color: white;
-  padding-left: 50px;
+  padding-left: 25px;
   padding-right: 25px;
 }
 
 .sidenav__item {
   display: list-item;
   list-style: none;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .sidenav__item:hover {
@@ -145,13 +145,16 @@ section .content {
   display: flex;
   flex-direction: column;
   /* FIXME this padding not optimal */
-  padding-left: 250px;
+  padding-left: 50px;
 }
 
-.card {
+.card__wrapper {
   flex-direction: column;
   border: 1px solid black;
-  width: 50%;
+  width: fit-content;
+  max-width: 50%;
   margin: 0;
   margin-bottom: 3em;
+  padding: 10px;
+  background-color: white;
 }
