@@ -14,9 +14,25 @@ const sidenavItems = document.querySelectorAll(".sidenav__item");
 //   });
 // });
 
-const test = document.querySelector("#test");
+const btnsSidenav = document.querySelector(".sidenav__items");
 
+btnsSidenav.addEventListener("click", (e) => {
+  e.preventDefault();
+  // FIXME how to assign 'active' to specific e.target
+  const btnComponents = ["A" /*, "IMG", "LI", "P"*/];
+
+  if (btnComponents.includes(e.target.tagName.toUpperCase())) {
+    console.log(`clicked a link button`);
+    const liSidenav = document.querySelectorAll(".sidenav__item");
+    liSidenav.forEach((li) => {
+      li.classList.toggle("active");
+    });
+  } else console.log(e.target);
+});
+
+const test = document.querySelector("#title-test");
 test.addEventListener("click", () => {
-  test.classList.toggle("active");
-  test.preventDefault();
+  test.innerText = "clicked title";
+  console.log(`clicked tilte... did the page preload?`);
+  //   test.preventDefault();
 });
