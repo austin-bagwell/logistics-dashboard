@@ -40,7 +40,7 @@ a {
   padding-top: 15px;
   transition: 0.75s;
   /* background-color: #111; */
-  background: linear-gradient(45deg, rgba(55, 55, 55, 0.932), black);
+  background: linear-gradient(40deg, rgba(55, 55, 55, 0.932), black);
 }
 
 .sidenav .logo {
@@ -72,6 +72,11 @@ a {
   list-style: none;
   margin-bottom: 1em;
   padding-left: 15px;
+}
+
+.sidenav__item:hover {
+  background-color: rgba(199, 199, 199, 0.579);
+  border-radius: 5px;
 }
 
 .sidenav__item.active {

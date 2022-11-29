@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Logistics Dashboard</title>
+  </head>
+  <body>
+    <!-- SIDE NAV -->
+    <div class="sidenav">
+      <div class="logo">
+        <img src="../assets/svg/guage-icon.svg" />
+      </div>
+      <ul class="sidenav__items">
+        <li class="sidenav__item active">
+          <a class="sidenav__link" href="./index.html"
+            ><img src="../assets/svg/home.svg" />
+            <p class="sidenav__text">Dashboard</p></a
+          >
+        </li>
+        <li class="sidenav__item">
+          <a class="sidenav__link" href="./user.html"
+            ><img src="../assets/svg/user.svg" />
+            <p class="sidenav__text">User Profile</p></a
+          >
+        </li>
+        <li class="sidenav__item">
+          <a class="sidenav__link" href="./consignees.html"
+            ><img src="../assets/svg/list.svg" />
+            <p class="sidenav__text">Consignees</p></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+      <!-- TOP NAV -->
+      <nav class="topnav">
+        <div class="topnav__title">
+          <h1 id="title-test">Logistics Dashboard</h1>
+        </div>
+        <ul class="topnav__items">
+          <li class="topnav__item"><p>Account</p></li>
+          <li class="topnav__item"><p>Dropdown</p></li>
+          <li class="topnav__item"><p>Logout</p></li>
+        </ul>
+      </nav>
+      <section class="content">
+        <div class="content-wrapper__main">
+          <div class="card__wrapper">
+            <div class="card-header">
+              <h3>Card Title</h3>
+            </div>
+            <div class="card-body">
+              <p>Put charts and stuff here</p>
+            </div>
+            <div class="card-footer">
+              <p>Additional card stuff?</p>
+            </div>
+          </div>
+          <div class="card__wrapper">
+            <div class="card-header">
+              <h3>Otro Card</h3>
+            </div>
+            <div class="card-body">
+              <p>Mas charts y data</p>
+            </div>
+            <div class="card-footer">
+              <p>footer details</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../app/script.js"></script>
+  </body>
+</html>
