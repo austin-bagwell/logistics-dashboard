@@ -40,7 +40,7 @@ a {
   padding-top: 15px;
   transition: 0.75s;
   /* background-color: #111; */
-  background: linear-gradient(40deg, rgba(55, 55, 55, 0.932), black);
+  background: linear-gradient(30deg, rgba(86, 86, 86, 0.9), rgb(0, 0, 0));
 }
 
 .sidenav .logo {
@@ -59,7 +59,7 @@ a {
   min-height: 100px;
 }
 
-.sidenav__items {
+.sidenav-items {
   display: block;
   flex-direction: column;
   padding-left: 25px;
@@ -67,42 +67,42 @@ a {
   color: white;
 }
 
-.sidenav__item {
+.sidenav-item {
   display: list-item;
   list-style: none;
   margin-bottom: 1em;
   padding-left: 15px;
 }
 
-.sidenav__item:hover {
+.sidenav-item:hover {
   background-color: rgba(199, 199, 199, 0.579);
   border-radius: 5px;
 }
 
-.sidenav__item.active {
-  background-color: rgba(199, 199, 199, 0.579);
+.sidenav-item.active {
+  background-color: rgba(199, 199, 199, 0.397);
   border-radius: 5px;
 }
 
-.sidenav__text:hover {
+.sidenav-text:hover {
   color: rgb(255, 218, 125);
 }
 
-.sidenav__item > a {
+.sidenav-item > a {
   display: flex;
   justify-content: left;
   align-items: center;
   color: white;
 }
 
-.sidenav__item > a > img {
+.sidenav-item > a > img {
   padding-right: 20px;
   max-width: 25px;
   max-height: 25px;
   filter: invert(100%);
 }
 
-.sidenav__text {
+.sidenav-text {
   text-transform: uppercase;
 }
 
@@ -127,23 +127,23 @@ main {
   border-bottom: 1px solid gray;
 }
 
-.topnav__title {
+.topnav-title {
   padding-left: 35px;
 }
 
-.topnav__items {
+.topnav-items {
   display: flex;
   justify-content: end;
   align-items: center;
   padding-right: 3.5em;
 }
 
-.topnav__item {
+.topnav-item {
   list-style: none;
   margin-left: 2.5em;
 }
 
-.topnav__item:hover {
+.topnav-item:hover {
   color: goldenrod;
 }
 
@@ -153,14 +153,14 @@ section .content {
   padding-top: 100px;
 }
 
-.content-wrapper__main {
+.content-wrapper-main {
   display: flex;
   flex-direction: column;
   /* FIXME this padding not optimal */
   padding-left: 50px;
 }
 
-.card__wrapper {
+.card-wrapper {
   flex-direction: column;
   border: 1px solid black;
   width: fit-content;
