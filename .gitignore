@@ -1,0 +1,4 @@
+*.parcel-cache
+.txt
+node_modules
+*.csv

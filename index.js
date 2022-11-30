@@ -10,6 +10,11 @@ const port = process.env.PORT || 3000;
 
 app.use("/", express.static(path.join(__dirname, "public")));
 
+// FIXME how to connect backend with parcel?
+app.get("/test", (req, res) => {
+  res.send("hello world");
+});
+
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
