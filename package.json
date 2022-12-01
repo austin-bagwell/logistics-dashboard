@@ -1,11 +1,13 @@
 {
   "name": "logistics-dashboard",
+  "source": "public/index.html",
   "version": "1.0.0",
-  "description": "",
+  "description": "A basic fullstack logistics dashboard.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +15,8 @@
     "chart.js": "^4.0.1",
     "express": "^4.18.2",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.0"
   }
 }
