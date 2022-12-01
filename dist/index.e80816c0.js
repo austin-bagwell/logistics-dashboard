@@ -581,6 +581,18 @@ var _auto = require("chart.js/auto");
             ]
         }
     });
+    new (0, _auto.Chart)(document.getElementById("secondchart"), {
+        type: "bar",
+        data: {
+            labels: data.map((row)=>row.year),
+            datasets: [
+                {
+                    label: "Acquisitions by year",
+                    data: data.map((row)=>row.count)
+                }
+            ]
+        }
+    });
 })(); // export a chart
  // maybe wrapped in a div?
  // maybe the div wrapping happens elsewhere

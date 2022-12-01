@@ -2,6 +2,7 @@
 // for file structure examples:
 // https://stackoverflow.com/questions/18927298/node-js-project-naming-conventions-for-files-folders/20885809#20885809
 
+// TODO firebase instead of full database?
 const express = require("express");
 const path = require("path");
 

@@ -28,6 +28,19 @@ import { Chart } from "chart.js/auto";
       ],
     },
   });
+
+  new Chart(document.getElementById("secondchart"), {
+    type: "bar",
+    data: {
+      labels: data.map((row) => row.year),
+      datasets: [
+        {
+          label: "Acquisitions by year",
+          data: data.map((row) => row.count),
+        },
+      ],
+    },
+  });
 })();
 
 // export a chart
