@@ -1,4 +1,3 @@
-// const { Chart } = require("chart.js/auto");
 import { Chart } from "chart.js/auto";
 
 (async function () {
