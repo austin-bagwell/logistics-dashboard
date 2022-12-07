@@ -532,7 +532,6 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"5Yas1":[function(require,module,exports) {
-// const { Chart } = require("chart.js/auto");
 var _auto = require("chart.js/auto");
 (async function() {
     // pass in data to make a chart
