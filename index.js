@@ -12,11 +12,6 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "public")));
 
-// FIXME how to connect backend with parcel?
-app.get("/test", (req, res) => {
-  res.send("hello world");
-});
-
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
@@ -46,16 +41,36 @@ const testCSVData = [
     consignee_name: "UNFI - Moreno Valley",
     consignee_shipfrom: "SF",
   },
+  {
+    consignee_id: "1234567",
+    consignee_name: "TEST - Shipping Location",
+    consignee_shipfrom: "TEST",
+  },
 ];
 app.get("/consignees", (req, res) => {
   res.send(testCSVData);
 });
-// it works!
-// But how to configure the request on the frontend to send whatever "shipfrom" was selected?
-// that will probably go in the request body, as built by a fetch() or something related
-function filterConsigneesByShipfrom(arr) {
-  return arr.filter((el) => el.consignee_shipfrom.toUpperCase() === "SF");
+
+// where does this live?
+function shortenShipfrom(location) {
+  if (location === "durham") return "DUR";
+  if (location === "emeryville") return "SF";
 }
+
+function filterArrayByShipfrom(arr, location) {
+  return arr.filter(
+    (el) => el.consignee_shipfrom.toUpperCase() === String(location)
+  );
+}
+
+// TODO getting the right info from the frontend request
 app.get("/consignees/:shipfrom", (req, res) => {
-  res.send(filterConsigneesByShipfrom(testCSVData));
+  // where do I get the 'location' parameter from?
+  const shipfrom = req.params.shipfrom;
+  console.log(`backend: shipfrom=${shipfrom}`);
+  const response = filterArrayByShipfrom(
+    testCSVData,
+    shortenShipfrom(shipfrom)
+  );
+  res.json(response);
 });
