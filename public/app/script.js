@@ -22,7 +22,15 @@ window.onclick = function (e) {
   }
 };
 
-const selectShipfrom = document.querySelector("#shipfrom-locations");
+const selectShipfrom = document.querySelector("#select-shipfrom-locations");
+
+// FETCH AND API FUNCS
+function fetchOK(url, options) {
+  return fetch(url, options).then((response) => {
+    if (response.status < 400) return response;
+    else throw new Error(response.statusText);
+  });
+}
 
 function abbreviateShipfrom(location) {
   if (location === "durham") return "DUR";
@@ -39,7 +47,7 @@ selectShipfrom.addEventListener("change", (e) => {
     method: "GET",
   };
   // console.log(`Sending to endpoint: ${request}`);
-  fetch(request, config)
+  fetchOK(request, config)
     .then((response) => response.json())
     .then((body) => console.log(body));
 });
