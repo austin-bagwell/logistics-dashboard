@@ -24,20 +24,21 @@ window.onclick = function (e) {
 
 const selectShipfrom = document.querySelector("#shipfrom-locations");
 
-// for consignees only obviously
+function abbreviateShipfrom(location) {
+  if (location === "durham") return "DUR";
+  if (location === "emeryville") return "SF";
+}
 function fetchConsigneeURLBuilder(el) {
-  const url = `/consignees/${el.value}`;
+  const url = `/consignees/${abbreviateShipfrom(el.value)}`;
   return url;
 }
 
 selectShipfrom.addEventListener("change", (e) => {
-  // build a fetch request that goes to /consignees
-  // and changes some DOM text
   const request = fetchConsigneeURLBuilder(e.target);
   const config = {
     method: "GET",
   };
-  console.log(`Sending to endpoint: ${request}`);
+  // console.log(`Sending to endpoint: ${request}`);
   fetch(request, config)
     .then((response) => response.json())
     .then((body) => console.log(body));

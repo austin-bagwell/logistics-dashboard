@@ -51,26 +51,15 @@ app.get("/consignees", (req, res) => {
   res.send(testCSVData);
 });
 
-// where does this live?
-function shortenShipfrom(location) {
-  if (location === "durham") return "DUR";
-  if (location === "emeryville") return "SF";
-}
-
 function filterArrayByShipfrom(arr, location) {
   return arr.filter(
     (el) => el.consignee_shipfrom.toUpperCase() === String(location)
   );
 }
 
-// TODO getting the right info from the frontend request
 app.get("/consignees/:shipfrom", (req, res) => {
   // where do I get the 'location' parameter from?
   const shipfrom = req.params.shipfrom;
-  console.log(`backend: shipfrom=${shipfrom}`);
-  const response = filterArrayByShipfrom(
-    testCSVData,
-    shortenShipfrom(shipfrom)
-  );
+  const response = filterArrayByShipfrom(testCSVData, shipfrom);
   res.json(response);
 });
