@@ -23,6 +23,7 @@ window.onclick = function (e) {
 };
 
 const selectShipfrom = document.querySelector("#select-shipfrom-locations");
+const consigneeListWrapper = document.querySelector(".consignee-list-wrapper");
 
 // FETCH AND API FUNCS
 function fetchOK(url, options) {
@@ -30,6 +31,9 @@ function fetchOK(url, options) {
     if (response.status < 400) return response;
     else throw new Error(response.statusText);
   });
+}
+function reportError(error) {
+  alert(String(error));
 }
 
 function abbreviateShipfrom(location) {
@@ -41,6 +45,36 @@ function fetchConsigneeURLBuilder(el) {
   return url;
 }
 
+// DOM ELEMENT CREATION FUNCS
+function elt(type, props, ...children) {
+  let dom = document.createElement(type);
+  if (props) Object.assign(dom, props);
+
+  for (let child of children) {
+    if (typeof child != "string") {
+      dom.appendChild(child);
+    } else dom.appendChild(document.createTextNode(child));
+  }
+  return dom;
+}
+
+function removeExistingListItems(targetNode) {
+  targetNode.innerHTML = "";
+}
+
+function renderNewConsigneeList(targetNode, newList) {
+  return targetNode.appendChild(
+    elt(
+      "ul",
+      { className: "consignee-list" },
+      ...newList.map((item) =>
+        elt("li", { classList: "consignee-list-item" }, item.consignee_name)
+      )
+    )
+  );
+}
+
+// LISTENERS
 selectShipfrom.addEventListener("change", (e) => {
   const request = fetchConsigneeURLBuilder(e.target);
   const config = {
@@ -49,5 +83,9 @@ selectShipfrom.addEventListener("change", (e) => {
   // console.log(`Sending to endpoint: ${request}`);
   fetchOK(request, config)
     .then((response) => response.json())
-    .then((body) => console.log(body));
+    .then((body) => {
+      removeExistingListItems(consigneeListWrapper);
+      renderNewConsigneeList(consigneeListWrapper, body);
+    })
+    .catch(reportError);
 });

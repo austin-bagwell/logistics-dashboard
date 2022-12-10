@@ -41,11 +41,6 @@ const testCSVData = [
     consignee_name: "UNFI - Moreno Valley",
     consignee_shipfrom: "SF",
   },
-  {
-    consignee_id: "1234567",
-    consignee_name: "TEST - Shipping Location",
-    consignee_shipfrom: "TEST",
-  },
 ];
 app.get("/consignees", (req, res) => {
   res.send(testCSVData);
