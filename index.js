@@ -16,10 +16,6 @@ app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
 
-// don't mess with parsing a csv and all that jazz
-// let step 0 be simply setting up and enpoint that returns a response containing
-// all testCSVData from right here
-// worry about modularity once you figure out the bare bones basics
 const testCSVData = [
   {
     consignee_id: "3102549",
@@ -42,19 +38,20 @@ const testCSVData = [
     consignee_shipfrom: "SF",
   },
 ];
+
 app.get("/consignees", (req, res) => {
   res.send(testCSVData);
 });
 
-function filterArrayByShipfrom(arr, location) {
+function filterConsigneesByShipfrom(arr, location) {
   return arr.filter(
-    (el) => el.consignee_shipfrom.toUpperCase() === String(location)
+    (cnsgnee) => cnsgnee.consignee_shipfrom.toUpperCase() === String(location)
   );
 }
 
 app.get("/consignees/:shipfrom", (req, res) => {
   // where do I get the 'location' parameter from?
   const shipfrom = req.params.shipfrom;
-  const response = filterArrayByShipfrom(testCSVData, shipfrom);
+  const response = filterConsigneesByShipfrom(testCSVData, shipfrom);
   res.json(response);
 });

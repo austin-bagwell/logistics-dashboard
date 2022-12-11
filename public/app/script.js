@@ -36,12 +36,8 @@ function reportError(error) {
   alert(String(error));
 }
 
-function abbreviateShipfrom(location) {
-  if (location === "durham") return "DUR";
-  if (location === "emeryville") return "SF";
-}
 function fetchConsigneeURLBuilder(el) {
-  const url = `/consignees/${abbreviateShipfrom(el.value)}`;
+  const url = `/consignees/${el.value.toUpperCase()}`;
   return url;
 }
 
