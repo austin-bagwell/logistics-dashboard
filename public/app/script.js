@@ -1,6 +1,4 @@
 "use strict";
-console.log(`Hello from /public/app/script.js`);
-
 const dropdownToggle = document.querySelector(".dropdown-toggle");
 const dropdownContainer = document.querySelector(".dropdown-container");
 

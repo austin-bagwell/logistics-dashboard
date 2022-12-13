@@ -47,7 +47,9 @@ a {
   overflow-x: hidden;
   padding-top: 15px;
   transition: 0.75s;
-  /* background-color: #111; */
+  /* box-shadow: 5px -5px 6px rgba(0, 0, 0, 0.403); */
+  border-right-width: 2px;
+  border-right-style: outset;
   background: linear-gradient(30deg, rgba(86, 86, 86, 0.9), rgb(0, 0, 0));
 }
 
