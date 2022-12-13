@@ -16,42 +16,78 @@ app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
 
-const testCSVData = [
+const testConsigneeData = [
   {
     consignee_id: "3102549",
     consignee_name: "KeHE - Stockton (33)",
-    consignee_shipfrom: "SF",
+    default_shipfrom_location: "SF",
   },
   {
     consignee_id: "1841102",
     consignee_name: "Kroger",
-    consignee_shipfrom: "DUR",
+    default_shipfrom_location: "DUR",
   },
   {
     consignee_id: "3413359",
     consignee_name: "UNFI - Iowa City",
-    consignee_shipfrom: "DUR",
+    default_shipfrom_location: "DUR",
   },
   {
     consignee_id: "3413354",
     consignee_name: "UNFI - Moreno Valley",
-    consignee_shipfrom: "SF",
+    default_shipfrom_location: "SF",
+  },
+];
+
+const testShipmenData = [
+  {
+    consignee: {
+      id: "3413359",
+      name: "UNFI - Iowa City",
+    },
+    details: {
+      proNumber: "1234",
+      carrier: "ODFL",
+      shipfrom: "DUR",
+      shipDate: "1/1/23",
+      arrivedAtCarrierYard: "1/2/23",
+      deliveryApptDate: "1/3/23",
+      deliveryDate: "1/3/23",
+      delivered: true,
+    },
+  },
+  {
+    consignee: {
+      id: "3413354",
+      name: "UNFI - Moreno Valley",
+    },
+    details: {
+      proNumber: "9876",
+      carrier: "XPO",
+      shipFrom: "SF",
+      shipDate: "1/10/23",
+      arrivedAtCarrierYard: "1/12/23",
+      deliveryApptDate: "1/20/23",
+      deliveryDate: "",
+      delivered: false,
+    },
   },
 ];
 
 app.get("/consignees", (req, res) => {
-  res.send(testCSVData);
+  res.send(testConsigneeData);
 });
 
 function filterConsigneesByShipfrom(arr, location) {
   return arr.filter(
-    (cnsgnee) => cnsgnee.consignee_shipfrom.toUpperCase() === String(location)
+    (cnsgnee) =>
+      cnsgnee.default_shipfrom_location.toUpperCase() === String(location)
   );
 }
 
 app.get("/consignees/:shipfrom", (req, res) => {
   // where do I get the 'location' parameter from?
   const shipfrom = req.params.shipfrom;
-  const response = filterConsigneesByShipfrom(testCSVData, shipfrom);
+  const response = filterConsigneesByShipfrom(testConsigneeData, shipfrom);
   res.json(response);
 });
