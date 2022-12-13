@@ -70,14 +70,30 @@ function renderNewConsigneeList(targetNode, newList) {
   );
 }
 
-// where data is array of objects
-// see shipments.html for formatting?
-// scrap targetNode - just do a .innerHTML = renderShipmentsTable() on an element
+// TODO
+// FIXME lol fuq'd
+// this works, but only for one data point at a time. Now, it's using 'consignee' from the JSON response.
+// How do I use multiple response data to construct headers and/or rows of data?
+const shipmentsTable = document.querySelector("#shipments-table");
+const testBtn = document.querySelector("#btn-shipments-test");
+function renderShipmentsTable() {
+  // function renderShipmentsTableRows() {}
+  function renderShipmentsTableHeaders(targetNode, data) {
+    return targetNode.appendChild(
+      elt(
+        "thead",
+        null,
+        elt("tr", null, ...data.map((el) => elt("th", null, el.consignee)))
+      )
+    );
+  }
 
-function renderShipmentsTable(data) {
-  function renderShipmentsTableHeaders() {}
-  function renderShipmentsTableRows() {}
+  fetchOK("/shipments", { method: "GET" })
+    .then((response) => response.json())
+    .then((body) => renderShipmentsTableHeaders(shipmentsTable, body));
 }
+
+testBtn.addEventListener("click", renderShipmentsTable);
 
 // LISTENERS
 selectShipfrom.addEventListener("change", (e) => {
