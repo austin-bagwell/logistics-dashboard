@@ -63,21 +63,45 @@
       </nav>
       <section class="content">
         <div class="content-wrapper-main">
-          <h2>Here be a list of shipments</h2>
+          <h2>Utilies such as a search bar and filter options will go here</h2>
           <main>
             <!-- what should table headers be? -->
             <!-- what options for filtering will exist? -->
-            <div class="shipment-list-wrapper">
+            <div class="shipments-list-wrapper">
               <!-- should probably render table w/ JS, could allow user to set customer fields in the future -->
               <!-- real basic example here for quicker reference -->
               <table>
-                <tr>
-                  <th>PRO #</th>
-                  <th>Consignee</th>
-                  <th>Carrier</th>
-                  <th>Ship Date</th>
-                  <th>Delivery Date</th>
-                </tr>
+                <thead>
+                  <tr>
+                    <th class="tableHeadCol proNumber" id="proNumber">PRO #</th>
+                    <th class="tableHeadCol shipper" id="shipper">Shipper</th>
+                    <th class="tableHeadCol consignee" id="consignee">
+                      Consignee
+                    </th>
+
+                    <th class="tableHeadCol purchaseOrder" id="purchaseOrder">
+                      Purchase Order
+                    </th>
+                    <th class="tableHeadCol carrier" id="carrier">Carrier</th>
+                    <th class="tableHeadCol shipDate" id="shipDate">
+                      Ship Date
+                    </th>
+                    <th class="tableHeadCol deliveryDate" id="deliveryDate">
+                      Delivery Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td headers="proNumber">1234</td>
+                    <td headers="shipper">CCC Durham</td>
+                    <td headers="consignee">Bob's Market</td>
+                    <td headers="purchaseOrder">PO9876</td>
+                    <td headers="carrier">ODFL</td>
+                    <td headers="shipDate">1/1/23</td>
+                    <td headers="deliveryDate">1/8/23</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </main>

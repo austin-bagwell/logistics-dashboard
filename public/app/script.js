@@ -1,10 +1,15 @@
 "use strict";
+// DOM ELEMENTS
 const dropdownToggle = document.querySelector(".dropdown-toggle");
 const dropdownContainer = document.querySelector(".dropdown-container");
+const selectShipfrom = document.querySelector("#select-shipfrom-locations");
+const consigneeListWrapper = document.querySelector(".consignee-list-wrapper");
+const shipmentsTableWrapper = document.querySelector(".shipments-list-wrapper");
 
+// DOM ANIMATION
+// dropdown menus, collapse sidenav, ect.
 dropdownToggle.addEventListener("click", () => {
   dropdownContainer.classList.toggle("show");
-  console.log("you clicked dropdown toggler");
 });
 
 window.onclick = function (e) {
@@ -19,9 +24,6 @@ window.onclick = function (e) {
     }
   }
 };
-
-const selectShipfrom = document.querySelector("#select-shipfrom-locations");
-const consigneeListWrapper = document.querySelector(".consignee-list-wrapper");
 
 // FETCH AND API FUNCS
 function fetchOK(url, options) {
@@ -66,6 +68,15 @@ function renderNewConsigneeList(targetNode, newList) {
       )
     )
   );
+}
+
+// where data is array of objects
+// see shipments.html for formatting?
+// scrap targetNode - just do a .innerHTML = renderShipmentsTable() on an element
+
+function renderShipmentsTable(data) {
+  function renderShipmentsTableHeaders() {}
+  function renderShipmentsTableRows() {}
 }
 
 // LISTENERS
