@@ -54,7 +54,7 @@ function elt(type, props, ...children) {
   return dom;
 }
 
-function removeExistingListItems(targetNode) {
+function removeInnerHTML(targetNode) {
   targetNode.innerHTML = "";
 }
 
@@ -80,7 +80,7 @@ selectShipfrom.addEventListener("change", (e) => {
   fetchOK(request, config)
     .then((response) => response.json())
     .then((body) => {
-      removeExistingListItems(consigneeListWrapper);
+      removeInnerHTML(consigneeListWrapper);
       renderNewConsigneeList(consigneeListWrapper, body);
     })
     .catch(reportError);

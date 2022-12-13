@@ -16,6 +16,8 @@ app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });
 
+// in the distant future data will be sourced from an actual DB
+// DATA
 const testConsigneeData = [
   {
     consignee_id: "3102549",
@@ -74,16 +76,32 @@ const testShipmenData = [
   },
 ];
 
-app.get("/consignees", (req, res) => {
-  res.send(testConsigneeData);
-});
-
+// all these need to be moved to module(s) at some point
+// FUNCTIONS
 function filterConsigneesByShipfrom(arr, location) {
   return arr.filter(
     (cnsgnee) =>
       cnsgnee.default_shipfrom_location.toUpperCase() === String(location)
   );
 }
+
+// these move to a router module at some point
+// ROUTES
+
+// SHIPMENT ROUTES
+app.get("/shipments", (req, res) => {
+  res.send(testShipmenData);
+});
+
+app.get("/shipmets?howToParseQuerys", (req, res) =>
+  res.send("results of query")
+);
+
+// I think this route needs to be renamed to make more sense
+// CONSIGNEE ROUTES
+app.get("/consignees", (req, res) => {
+  res.send(testConsigneeData);
+});
 
 app.get("/consignees/:shipfrom", (req, res) => {
   // where do I get the 'location' parameter from?
