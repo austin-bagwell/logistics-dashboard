@@ -41,32 +41,24 @@ const testConsigneeData = [
   },
 ];
 
-const testShipmenData = [
+const testShipmentData = [
   {
-    consignee_id: "3413359",
     consignee: "UNFI - Iowa City",
     proNumber: "1234",
     purchaseOrder: "P5678",
     carrier: "ODFL",
-    shipfrom: "DUR",
+    shipFrom: "DUR",
     shipDate: "1/1/23",
-    arrivedAtCarrierYard: "1/2/23",
-    deliveryApptDate: "1/3/23",
     deliveryDate: "1/3/23",
-    delivered: true,
   },
   {
-    consignee_id: "3413354",
     consignee: "UNFI - Moreno Valley",
     proNumber: "9876",
     purchaseOrder: "11223344",
     carrier: "XPO",
     shipFrom: "SF",
     shipDate: "1/10/23",
-    arrivedAtCarrierYard: "1/12/23",
-    deliveryApptDate: "1/20/23",
     deliveryDate: "",
-    delivered: false,
   },
 ];
 
@@ -84,7 +76,7 @@ function filterConsigneesByShipfrom(arr, location) {
 
 // SHIPMENT ROUTES
 app.get("/shipments", (req, res) => {
-  res.send(testShipmenData);
+  res.send(testShipmentData);
 });
 
 app.get("/shipmets?howToParseQuerys", (req, res) =>
