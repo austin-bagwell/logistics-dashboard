@@ -8,7 +8,6 @@ const shipmentsTableWrapper = document.querySelector(
   ".shipments-table-wrapper"
 );
 const shipmentsTable = document.querySelector(".shipments-table");
-const shipmentsTableBody = document.querySelector(".shipments-table-body");
 
 // DOM ANIMATION
 // dropdown menus, collapse sidenav, ect.
@@ -74,7 +73,6 @@ function renderNewConsigneeList(targetNode, newList) {
   );
 }
 
-// TODO might be able to use this in conjuction w/ the JSON object to extract key/val pairs dynamically for rows...and put them in the right order
 function listShipmentHeaderIDs() {
   const headerIDs = document.querySelectorAll(".tableHeadCol");
   const idList = [];
@@ -82,6 +80,7 @@ function listShipmentHeaderIDs() {
   return idList;
 }
 
+// FIXME need to ensure that typeof shipment[header] == string or can be converted to string
 function generateShipmentRowsHtmlString(shipmentsJSON) {
   const headers = listShipmentHeaderIDs();
   let html = "";
@@ -99,6 +98,7 @@ function generateShipmentRowsHtmlString(shipmentsJSON) {
   return html.trim();
 }
 function addShipmentsToTableBody() {
+  const shipmentsTableBody = document.querySelector(".shipments-table-body");
   fetchOK("/shipments", { method: "GET" })
     .then((response) => response.json())
     .then((body) => {
