@@ -79,8 +79,7 @@ function listShipmentHeaderIDs() {
   headerIDs.forEach((header) => idList.push(header.id));
   return idList;
 }
-
-// FIXME need to ensure that typeof shipment[header] == string or can be converted to string
+// expects all JSON values to be strings
 function generateShipmentRowsHtmlString(shipmentsJSON) {
   const headers = listShipmentHeaderIDs();
   let html = "";
@@ -90,7 +89,9 @@ function generateShipmentRowsHtmlString(shipmentsJSON) {
     let row = "<tr>";
     // every row item needs to be enclosed in <td>
     for (let header of headers) {
-      row += `<td>${shipment[header]}</td>`;
+      row += `<td>${
+        typeof shipment[header] === "string" ? shipment[header] : ""
+      }</td>`;
     }
     row += `</tr>`;
     html += row;
