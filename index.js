@@ -5,6 +5,7 @@
 // TODO firebase instead of full database?
 const express = require("express");
 const path = require("path");
+const makeTestShipments = require("./backend/tests/shipmentData.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -41,26 +42,26 @@ const testConsigneeData = [
   },
 ];
 
-const testShipmentData = [
-  {
-    consignee: "UNFI - Iowa City",
-    proNumber: "1234",
-    purchaseOrder: "P5678",
-    carrier: "ODFL",
-    shipFrom: "DUR",
-    shipDate: "1/1/23",
-    deliveryDate: "1/3/23",
-  },
-  {
-    consignee: "UNFI - Moreno Valley",
-    proNumber: "9876",
-    purchaseOrder: "11223344",
-    carrier: "XPO",
-    shipFrom: "SF",
-    shipDate: "1/10/23",
-    deliveryDate: "",
-  },
-];
+// const testShipmentData = [
+//   {
+//     consignee: "UNFI - Iowa City",
+//     proNumber: "1234",
+//     purchaseOrder: "P5678",
+//     carrier: "ODFL",
+//     shipFrom: "DUR",
+//     shipDate: "1/1/23",
+//     deliveryDate: "1/3/23",
+//   },
+//   {
+//     consignee: "UNFI - Moreno Valley",
+//     proNumber: "9876",
+//     purchaseOrder: "11223344",
+//     carrier: "XPO",
+//     shipFrom: "SF",
+//     shipDate: "1/10/23",
+//     deliveryDate: "",
+//   },
+// ];
 
 // all these need to be moved to module(s) at some point
 // FUNCTIONS
@@ -76,7 +77,7 @@ function filterConsigneesByShipfrom(arr, location) {
 
 // SHIPMENT ROUTES
 app.get("/shipments", (req, res) => {
-  res.send(testShipmentData);
+  res.send(makeTestShipments(10));
 });
 
 app.get("/shipmets?howToParseQuerys", (req, res) =>
