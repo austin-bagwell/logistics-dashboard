@@ -42,27 +42,6 @@ const testConsigneeData = [
   },
 ];
 
-// const testShipmentData = [
-//   {
-//     consignee: "UNFI - Iowa City",
-//     proNumber: "1234",
-//     purchaseOrder: "P5678",
-//     carrier: "ODFL",
-//     shipFrom: "DUR",
-//     shipDate: "1/1/23",
-//     deliveryDate: "1/3/23",
-//   },
-//   {
-//     consignee: "UNFI - Moreno Valley",
-//     proNumber: "9876",
-//     purchaseOrder: "11223344",
-//     carrier: "XPO",
-//     shipFrom: "SF",
-//     shipDate: "1/10/23",
-//     deliveryDate: "",
-//   },
-// ];
-
 // all these need to be moved to module(s) at some point
 // FUNCTIONS
 function filterConsigneesByShipfrom(arr, location) {

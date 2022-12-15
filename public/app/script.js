@@ -84,10 +84,8 @@ function generateShipmentRowsHtmlString(shipmentsJSON) {
   const headers = listShipmentHeaderIDs();
   let html = "";
 
-  // every shipment needs to be enclosed in <tr>
   for (let shipment of shipmentsJSON) {
     let row = "<tr>";
-    // every row item needs to be enclosed in <td>
     for (let header of headers) {
       row += `<td>${
         typeof shipment[header] === "string" ? shipment[header] : ""
