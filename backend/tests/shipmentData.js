@@ -21,7 +21,7 @@ function createConstructor(...propNames) {
 
 const Shipment = createConstructor(...headersForShipmentsPage);
 
-function makeTestShipmentData() {
+function makeTestShipment() {
   const consignees = [
     "UNFI - Lancaster",
     "Cavallaro",
@@ -58,7 +58,7 @@ function makeTestShipmentData() {
 module.exports = function makeTestShipments(int) {
   const shipments = [];
   for (let i = 0; i < int; i++) {
-    const testData = makeTestShipmentData();
+    const testData = makeTestShipment();
     shipments.push(new Shipment(...testData));
   }
   return shipments;
