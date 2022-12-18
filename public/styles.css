@@ -199,6 +199,8 @@ section .content {
 .content-wrapper-main {
   display: flex;
   flex-direction: column;
+  /* FIXME does everything need to be center aligned in the main content area? idk */
+  align-items: center;
   /* FIXME this padding not optimal */
   padding-left: 50px;
 }
@@ -222,4 +224,48 @@ section .content {
   display: block;
   border: 1px solid black;
   background-color: #f1f1f1;
+}
+
+/* SHIPMENTS */
+
+.table-utilities-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.table-utilities-wrapper fieldset {
+  border: 0;
+  padding-left: 0;
+}
+
+.shipments-table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.shipments-table thead tr {
+  background-color: black;
+}
+
+.shipments-table thead tr th {
+  /* padding: 5px; */
+  color: white;
+}
+
+.shipments-table tr {
+  align-items: center;
+}
+
+.shipments-table th {
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.shipments-table td {
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
 }

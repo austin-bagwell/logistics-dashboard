@@ -63,14 +63,18 @@
       </nav>
       <section class="content">
         <div class="content-wrapper-main">
-          <h2>Utilies such as a search bar and filter options will go here</h2>
-
           <main>
-            <!-- what should table headers be? -->
-            <!-- what options for filtering will exist? -->
+            <div class="table-utilities-wrapper">
+              <fieldset class="filter-delivery-status">
+                <span>Filter By Delivery Status:</span>
+                <input type="radio" id="enroute" name="delivery-status" />
+                <label for="enroute">Enroute</label>
+                <input type="radio" id="delivered" name="delivery-status" />
+                <label for="delivered">Delivered</label>
+              </fieldset>
+              <button id="btn-new-shipment">Add New Shipment</button>
+            </div>
             <div class="shipments-table-wrapper">
-              <!-- should probably render table w/ JS, could allow user to set customer fields in the future -->
-              <!-- real basic example here for quicker reference -->
               <table class="shipments-table">
                 <thead>
                   <tr>
@@ -92,17 +96,7 @@
                     </th>
                   </tr>
                 </thead>
-                <tbody class="shipments-table-body">
-                  <!-- <tr>
-                    <td headers="proNumber">1234</td>
-                    <td headers="shipper">CCC Durham</td>
-                    <td headers="consignee">Bob's Market</td>
-                    <td headers="purchaseOrder">PO9876</td>
-                    <td headers="carrier">ODFL</td>
-                    <td headers="shipDate">1/1/23</td>
-                    <td headers="deliveryDate">1/8/23</td>
-                  </tr> -->
-                </tbody>
+                <tbody class="shipments-table-body"></tbody>
               </table>
             </div>
           </main>

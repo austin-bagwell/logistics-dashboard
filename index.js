@@ -56,7 +56,7 @@ function filterConsigneesByShipfrom(arr, location) {
 
 // SHIPMENT ROUTES
 app.get("/shipments", (req, res) => {
-  res.send(makeTestShipments(25));
+  res.send(makeTestShipments(15));
 });
 
 app.get("/shipmets?howToParseQuerys", (req, res) =>

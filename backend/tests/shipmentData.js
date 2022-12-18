@@ -31,11 +31,11 @@ function makeTestShipment() {
     "King's Red & White",
   ];
   const proNumber = Math.round(Math.random() * 100000).toString();
-  const purchaseOrder = `PO${Math.round(Math.random() * 1000).toString()}`;
+  const purchaseOrder = `PO-${Math.round(Math.random() * 1000).toString()}`;
   const carriers = ["ODFL", "ESTES", "XPO", "NRCL", "WRDL"];
   const shipFroms = ["DURHAM", "EMERYVILLE", "DALLAS"];
   const shipDates = ["1/1/23", "1/2/23", "1/3/23"];
-  const deliveryDates = ["1/6/23", "1/7/23", "1/8/23"];
+  const deliveryDates = ["1/6/23", "1/7/23", "1/8/23", ""];
 
   const randomIndex = (arr) => {
     if (arr.length > 1) {
