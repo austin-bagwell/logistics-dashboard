@@ -28,6 +28,13 @@ window.onclick = function (e) {
   }
 };
 
+const btnToggleNewShipmentModal = document.querySelector("#btn-new-shipment");
+
+btnToggleNewShipmentModal.addEventListener("click", () => {
+  const modal = document.querySelector(".modal.new-shipment-wrapper");
+  modal.classList.toggle("hidden");
+});
+
 // FETCH AND API FUNCS
 function fetchOK(url, options) {
   return fetch(url, options).then((response) => {
