@@ -227,7 +227,6 @@ section .content {
 }
 
 /* SHIPMENTS */
-
 .table-utilities-wrapper {
   display: flex;
   justify-content: space-between;

@@ -5,7 +5,7 @@
 // TODO firebase instead of full database?
 const express = require("express");
 const path = require("path");
-const makeTestShipments = require("./backend/tests/shipmentData.js");
+const dummyShipments = require("./backend/data/dummyShipments");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -51,12 +51,14 @@ function filterConsigneesByShipfrom(arr, location) {
   );
 }
 
+//
 // these move to a router module at some point
 // ROUTES
+//
 
 // SHIPMENT ROUTES
 app.get("/shipments", (req, res) => {
-  res.send(makeTestShipments(15));
+  res.send(dummyShipments);
 });
 
 app.get("/shipmets?howToParseQuerys", (req, res) =>
