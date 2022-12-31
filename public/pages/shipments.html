@@ -76,22 +76,41 @@
             </div>
             <div class="modal new-shipment-wrapper hidden">
               <div class="modal-content">
-                <form class="new-shipment">
-                  <label for="pro-number">PRO #: </label>
-                  <input type="text" name="pro-number" />
-                  <label for="shipper">Shipper: </label>
-                  <input type="text" name="shipper" />
-                  <label for="consignee">Consignee: : </label>
-                  <input type="text" name="consignee" />
-                  <label for="purchase-order">Purchase Order: </label>
-                  <input type="text" name="purchase-order" />
-                  <label for="carrier">Carrier: </label>
-                  <input type="text" name="carrier" />
-                  <label for="ship-date">Ship Date: </label>
-                  <input type="text" name="ship-date" />
-                  <label for="delivery-date">Delivery Date: </label>
-                  <input type="text" name="delivery-date" />
-                  <button type="submit" id="submit-new-shipment"></button>
+                <div class="modal-header">
+                  <h3>Enter shipment details below</h3>
+                </div>
+                <form class="new-shipment-form">
+                  <label for="pro-number">
+                    PRO #: <input type="text" name="pro-number"
+                  /></label>
+
+                  <label for="shipper"
+                    >Shipper: <input type="text" name="shipper"
+                  /></label>
+
+                  <label for="consignee"
+                    >Consignee: <input type="text" name="consignee"
+                  /></label>
+
+                  <label for="purchase-order"
+                    >Purchase Order: <input type="text" name="purchase-order"
+                  /></label>
+
+                  <label for="carrier"
+                    >Carrier: <input type="text" name="carrier"
+                  /></label>
+
+                  <label for="ship-date"
+                    >Ship Date: <input type="text" name="ship-date"
+                  /></label>
+
+                  <label for="delivery-date"
+                    >Delivery Date: <input type="text" name="delivery-date"
+                  /></label>
+
+                  <button type="submit" id="submit-new-shipment">
+                    Add New Shipment
+                  </button>
                 </form>
               </div>
             </div>
