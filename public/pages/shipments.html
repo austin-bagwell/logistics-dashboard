@@ -74,6 +74,27 @@
               </fieldset>
               <button id="btn-new-shipment">Add New Shipment</button>
             </div>
+            <div class="modal new-shipment-wrapper hidden">
+              <div class="modal-content">
+                <form class="new-shipment">
+                  <input type="text" name="pro-number" />
+                  <label for="pro-number">PRO #: </label>
+                  <input type="text" name="shipper" />
+                  <label for="shipper">Shipper: </label>
+                  <input type="text" name="consignee" />
+                  <label for="consignee">Consignee: : </label>
+                  <input type="text" name="purchase-order" />
+                  <label for="purchase-order">Purchase Order: </label>
+                  <input type="text" name="carrier" />
+                  <label for="carrier">Carrier: </label>
+                  <input type="text" name="ship-date" />
+                  <label for="ship-date">Ship Date: </label>
+                  <input type="text" name="delivery-date" />
+                  <label for="delivery-date">Delivery Date: </label>
+                  <button type="submit"></button>
+                </form>
+              </div>
+            </div>
             <div class="shipments-table-wrapper">
               <table class="shipments-table">
                 <thead>
