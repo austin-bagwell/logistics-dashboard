@@ -56,8 +56,24 @@ function filterConsigneesByShipfrom(arr, location) {
 // ROUTES
 //
 
+const testShipment = {
+  consignee: "TEST",
+  proNumber: "TEST",
+  purchaseOrder: "TEST",
+  carrier: "TEST",
+  shipFrom: "TEST",
+  shipDate: "TEST",
+  deliveryDate: "TEST",
+};
+
 // SHIPMENT ROUTES
 app.get("/shipments", (req, res) => {
+  res.send(dummyShipments);
+});
+
+// TODO add a new shipment to dummyShipments and insert the new list of shipments into the DOM
+app.put("/shipments/new", (req, res) => {
+  dummyShipments.push(testShipment);
   res.send(dummyShipments);
 });
 
