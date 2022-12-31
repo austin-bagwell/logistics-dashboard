@@ -72,7 +72,9 @@ app.get("/shipments", (req, res) => {
 });
 
 // TODO add a new shipment to dummyShipments and insert the new list of shipments into the DOM
-app.put("/shipments/new", (req, res) => {
+app.post("/shipments", (req, res) => {
+  // TODO actually push req.body{shipment} from form submission into dummyShipments[]
+
   dummyShipments.push(testShipment);
   res.send(dummyShipments);
 });
