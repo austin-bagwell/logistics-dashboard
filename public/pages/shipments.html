@@ -79,33 +79,56 @@
                 <div class="modal-header">
                   <h3>Enter shipment details below</h3>
                 </div>
-                <form class="new-shipment-form">
+                <form
+                  class="new-shipment-form"
+                  action="/shipments"
+                  method="post"
+                >
                   <label for="pro-number">
-                    PRO #: <input type="text" name="pro-number"
+                    PRO #:
+                    <input type="text" name="pro-number" id="new-shipment-pro"
                   /></label>
 
                   <label for="shipper"
                     >Shipper: <input type="text" name="shipper"
-                  /></label>
+                    id="new-shipment-shipper"" /></label
+                  >
 
                   <label for="consignee"
-                    >Consignee: <input type="text" name="consignee"
+                    >Consignee:
+                    <input
+                      type="text"
+                      name="consignee"
+                      id="new-shipment-consignee"
                   /></label>
 
                   <label for="purchase-order"
-                    >Purchase Order: <input type="text" name="purchase-order"
+                    >Purchase Order:
+                    <input
+                      type="text"
+                      name="purchase-order"
+                      id="new-shipment-purchase-order"
                   /></label>
 
                   <label for="carrier"
-                    >Carrier: <input type="text" name="carrier"
+                    >Carrier:
+                    <input type="text" name="carrier" id="new-shipment-carrier"
                   /></label>
 
                   <label for="ship-date"
-                    >Ship Date: <input type="text" name="ship-date"
+                    >Ship Date:
+                    <input
+                      type="text"
+                      name="ship-date"
+                      id="new-shipment-ship-date"
                   /></label>
 
                   <label for="delivery-date"
-                    >Delivery Date: <input type="text" name="delivery-date"
+                    >Delivery Date:
+                    <input
+                      type="text"
+                      name="delivery-date"
+                      id="new-shipment-delivery-date"
                   /></label>
 
                   <button type="submit" id="submit-new-shipment">

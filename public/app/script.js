@@ -86,7 +86,7 @@ function listShipmentHeaderIDs() {
   headerIDs.forEach((header) => idList.push(header.id));
   return idList;
 }
-// expects all JSON values to be strings
+
 function generateShipmentRowsHtmlString(shipmentsJSON) {
   const headers = listShipmentHeaderIDs();
   let html = "";
@@ -131,3 +131,19 @@ selectShipfrom.addEventListener("change", (e) => {
     })
     .catch(reportError);
 });
+
+const newShipmentForm = document.querySelector(".new-shipments-form");
+// newShipmentForm.addEventListener('onsubmit', repaintDOMWithNewShipmentsList)
+
+//
+// FORM HANDLERS
+//
+
+// Think I need to build an object with all the new shipment form inputs here
+function validateNewShipmentInput() {}
+
+function buildNewShipmentReq() {}
+
+function postNewShipment() {}
+
+function renderShipmentList() {}
